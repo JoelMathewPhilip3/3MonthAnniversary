@@ -12,13 +12,11 @@
       --bg-1: #2d1a12;
       --bg-2: #5b3926;
       --bg-3: #a9764d;
-
       --paper-1: #f1ddbf;
       --paper-2: #ddb584;
       --paper-3: #bf8554;
-
       --ink: #2a170f;
-      --ink-soft: rgba(42, 23, 15, 0.82);
+      --ink-soft: rgba(42, 23, 15, 0.84);
       --card: rgba(243, 223, 193, 0.94);
       --card-2: rgba(233, 206, 170, 0.95);
       --shadow: rgba(20, 10, 4, 0.5);
@@ -88,8 +86,8 @@
     .letter {
       position: relative;
       width: min(95vw, 820px);
-      margin: 0 auto 34px;
-      padding: 42px 22px 46px;
+      margin: 0 auto 18px;
+      padding: 42px 24px 48px;
       overflow: hidden;
       background:
         radial-gradient(circle at 15% 18%, rgba(96, 50, 24, 0.22), transparent 16%),
@@ -199,22 +197,62 @@
       position: relative;
       z-index: 5;
       max-width: 100%;
-      font-family: "Dancing Script", cursive;
-      font-size: clamp(1.3rem, 5.3vw, 1.95rem);
-      line-height: 1.42;
       color: var(--ink);
       text-shadow: 0 1px 0 rgba(255,255,255,0.22);
     }
 
+    .letter-text .handwritten {
+      font-family: "Dancing Script", cursive;
+      font-size: clamp(2.1rem, 8vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 30px;
+      color: var(--ink);
+    }
+
     .letter-text p {
-      margin-bottom: 20px;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.18rem;
+      line-height: 1.78;
+      margin-bottom: 30px;
+      letter-spacing: 0.2px;
+      color: rgba(42, 23, 15, 0.92);
+    }
+
+    .letter-text .highlight-line {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.28rem;
+      line-height: 1.65;
+      font-weight: 700;
+      margin: 34px 0 28px;
+      color: #2a170f;
     }
 
     .signature {
-      margin-top: 28px;
+      margin-top: 38px;
       text-align: left;
-      font-size: clamp(1.8rem, 7vw, 2.6rem);
+      font-family: "Dancing Script", cursive;
+      font-size: clamp(2.1rem, 8vw, 3rem);
       line-height: 1.18;
+    }
+
+    .scroll-cue {
+      width: min(95vw, 820px);
+      margin: 0 auto 34px;
+      text-align: center;
+      color: rgba(255, 238, 212, 0.88);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.4px;
+      animation: bounceCue 1.8s ease-in-out infinite;
+    }
+
+    @keyframes bounceCue {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(5px);
+      }
     }
 
     .section {
@@ -277,12 +315,30 @@
       width: 100%;
       max-width: 720px;
       background: linear-gradient(180deg, var(--card), var(--card-2));
-      border-radius: 20px;
-      padding: 14px;
+      border-radius: 18px;
+      padding: 12px;
       box-shadow:
         0 14px 28px rgba(32, 15, 7, 0.18),
         inset 0 0 12px rgba(92, 48, 24, 0.07);
       border: 1px solid rgba(98, 53, 28, 0.10);
+      position: relative;
+    }
+
+    .chapter-tag {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(87, 47, 26, 0.14);
+      color: #4e2f1d;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .coming-soon {
+      background: rgba(79, 43, 24, 0.82);
+      color: #f6dfbd;
     }
 
     .memory-inner {
@@ -293,11 +349,11 @@
     }
 
     .memory-image-wrap {
-      background: rgba(255,255,255,0.26);
+      background: rgba(255,255,255,0.30);
       border-radius: 16px;
-      padding: 8px;
+      padding: 6px;
       overflow: hidden;
-      min-height: 240px;
+      min-height: 180px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -305,8 +361,8 @@
 
     .memory-image-wrap img {
       width: 100%;
+      max-height: 480px;
       height: auto;
-      max-height: 460px;
       object-fit: contain;
       display: block;
       border-radius: 10px;
@@ -327,7 +383,7 @@
 
     .memory-title {
       font-family: "Dancing Script", cursive;
-      font-size: clamp(1.6rem, 6vw, 2.2rem);
+      font-size: 1.9rem;
       line-height: 1.05;
       color: var(--ink);
       margin-bottom: 8px;
@@ -335,7 +391,7 @@
 
     .memory-desc {
       font-size: 1.02rem;
-      line-height: 1.42;
+      line-height: 1.5;
       color: var(--ink-soft);
     }
 
@@ -395,8 +451,13 @@
       }
 
       .letter {
-        padding: 56px 44px 58px;
-        margin-bottom: 50px;
+        padding: 56px 48px 58px;
+        margin-bottom: 22px;
+      }
+
+      .letter-text p {
+        font-size: clamp(1.22rem, 2vw, 1.48rem);
+        line-height: 1.74;
       }
 
       .section {
@@ -406,12 +467,20 @@
       .memory-inner {
         grid-template-columns: minmax(280px, 350px) 1fr;
         gap: 18px;
-        text-align: left;
       }
 
       .memory-content {
         text-align: left;
         padding: 4px 6px;
+      }
+
+      .memory-image-wrap {
+        min-height: 220px;
+        padding: 8px;
+      }
+
+      .memory-image-wrap img {
+        max-height: 520px;
       }
     }
   </style>
@@ -426,22 +495,35 @@
       <div class="crease three"></div>
 
       <div class="letter-text">
-        <p>Dear Kanmani,</p>
+        <div class="handwritten">Dear Kanmani,</div>
 
         <p>
           Happy 3 months anniversary Maria Kutty! I cannot believe its already been 3 months since that first message!
           I remember being shy sending that first message, that first hello, not knowing how it will turn out.
-          Pakshe, more than that I remember asking god when I saw your profile first
+        </p>
+
+        <p>
+          Pakshe, more than that I remember asking god when I saw your profile first,
           "Daivamay ee penn kochinay ennik thane theranamay".
           God definitely heard that prayer and he bought the most beautiful angel into my life!
         </p>
 
         <p>
-          I always am thanking god for bringing you into my life. It was amazing how I knew within the first few days itself that you were the one.
+          I always am thanking god for bringing you into my life. It was amazing how I knew within the first few days itself
+          that you were the one.
+        </p>
+
+        <p>
           The first thing I fell for, of course, was that beautiful smile of yours.
           Aa pal kanich ola chiri, ente mole I feel I never can stop loving that smile.
+        </p>
+
+        <p>
           Then within a few days I got to understand the amazing person behind that smile.
           I felt a special comfort when I was talking to you over phone and that comfort only increased once we met in person!
+        </p>
+
+        <p>
           Ninte kude I can be my true self and loving you is the easiest thing I can do.
           You have become so precious for me and I will try my best to always keep you happy forever.
         </p>
@@ -449,13 +531,20 @@
         <p>
           You already know I spend most of the day just looking at our photos together and am always dreaming of our future together.
           There is going to be a lot of ups and downs, atha jeevitham, but I will be there to bring us back together after any fights.
-          Kurach santoshangal, penakangal and cringe ilada pinne ennada jeevitham!
-          I cannot wait to propose to you in <span id="proposalDays">...</span> days and show you to the whole world.
-          Only <span id="marriageDays">...</span> days left to our marriage kanmani and then we will be together forever!
-          Looking forward to waking up beside you every day, making you breakfast in bed some days, annoying you with my habits, travelling around the world, spending every small moment together and supporting each other in everything!
         </p>
 
         <p>
+          Kurach santoshangal, penakangal and cringe ilada pinne ennada jeevitham!
+          I cannot wait to propose to you in <span id="proposalDays">...</span> days and show you to the whole world.
+        </p>
+
+        <p>
+          Only <span id="marriageDays">...</span> days left to our marriage kanmani and then we will be together forever!
+          Looking forward to waking up beside you every day, making you breakfast in bed some days, annoying you with my habits,
+          travelling around the world, spending every small moment together and supporting each other in everything!
+        </p>
+
+        <p class="highlight-line">
           Happy 3 months, Kanmani.
         </p>
 
@@ -466,6 +555,8 @@
       </div>
     </section>
 
+    <div class="scroll-cue fade-in delay-1">↓ Our story continues below ↓</div>
+
     <section class="section fade-in delay-1">
       <h2 class="section-title">Our 3 month Memories and Future!</h2>
       <p class="section-subtitle">
@@ -474,9 +565,10 @@
 
       <div class="memory-flow">
         <div class="memory-card">
+          <span class="chapter-tag">Chapter 1</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image1.jpg" alt="First message memory">
+              <img src="image1.jpeg" alt="First message memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">April 10</div>
@@ -489,9 +581,10 @@
         <div class="memory-arrow"><div class="line"></div></div>
 
         <div class="memory-card">
+          <span class="chapter-tag">Chapter 2</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image2.jpg" alt="Sunday selfie tradition memory">
+              <img src="image2.jpeg" alt="Sunday selfie tradition memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">April 19</div>
@@ -504,9 +597,10 @@
         <div class="memory-arrow"><div class="line"></div></div>
 
         <div class="memory-card">
+          <span class="chapter-tag">Chapter 3</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image3.jpg" alt="First meet memory">
+              <img src="image3.jpeg" alt="First meet memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">June 4</div>
@@ -519,9 +613,10 @@
         <div class="memory-arrow"><div class="line"></div></div>
 
         <div class="memory-card">
+          <span class="chapter-tag">Chapter 4</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image4.jpg" alt="Breakfast date memory">
+              <img src="image4.jpeg" alt="Breakfast date memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">June 5 (Morning)</div>
@@ -534,9 +629,10 @@
         <div class="memory-arrow"><div class="line"></div></div>
 
         <div class="memory-card">
+          <span class="chapter-tag">Chapter 5</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image5.jpg" alt="Official pennukanal memory">
+              <img src="image5.jpeg" alt="Official pennukanal memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">June 5 (Evening)</div>
@@ -549,9 +645,10 @@
         <div class="memory-arrow"><div class="line"></div></div>
 
         <div class="memory-card">
+          <span class="chapter-tag">Chapter 6</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image6.jpg" alt="House date memory">
+              <img src="image6.jpeg" alt="House date memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">June 6</div>
@@ -564,9 +661,10 @@
         <div class="memory-arrow"><div class="line"></div></div>
 
         <div class="memory-card">
+          <span class="chapter-tag">Chapter 7</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image7.jpg" alt="Special drive memory">
+              <img src="image7.jpeg" alt="Special drive memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">June 8</div>
@@ -579,9 +677,10 @@
         <div class="memory-arrow"><div class="line"></div></div>
 
         <div class="memory-card">
+          <span class="chapter-tag coming-soon">Coming Soon</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image8.jpg" alt="Proposal memory">
+              <img src="image8.jpeg" alt="Proposal memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">Oct 10</div>
@@ -594,9 +693,10 @@
         <div class="memory-arrow"><div class="line"></div></div>
 
         <div class="memory-card">
+          <span class="chapter-tag coming-soon">Coming Soon</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image9.jpg" alt="Wedding memory">
+              <img src="image9.jpeg" alt="Wedding memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">Jan 3</div>
@@ -609,9 +709,10 @@
         <div class="memory-arrow"><div class="line"></div></div>
 
         <div class="memory-card">
+          <span class="chapter-tag coming-soon">Forever</span>
           <div class="memory-inner">
             <div class="memory-image-wrap">
-              <img src="image10.jpg" alt="Forever memory">
+              <img src="image10.jpeg" alt="Forever memory">
             </div>
             <div class="memory-content">
               <div class="memory-date">Forever</div>
