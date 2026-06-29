@@ -649,6 +649,77 @@
       }
     }
 
+
+    .floating-hearts {
+      position: fixed;
+      inset: 0;
+      z-index: 4;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .floating-hearts span {
+      position: absolute;
+      bottom: -80px;
+      color: rgba(255, 236, 205, 0.16);
+      font-family: "Dancing Script", cursive;
+      font-size: 2.4rem;
+      text-shadow: 0 0 18px rgba(255, 236, 205, 0.12);
+      animation: floatHeart 18s linear infinite;
+    }
+
+    .floating-hearts span:nth-child(1) {
+      left: 8%;
+      animation-delay: 0s;
+      animation-duration: 19s;
+      font-size: 2rem;
+    }
+
+    .floating-hearts span:nth-child(2) {
+      left: 28%;
+      animation-delay: 5s;
+      animation-duration: 23s;
+      font-size: 2.8rem;
+    }
+
+    .floating-hearts span:nth-child(3) {
+      left: 54%;
+      animation-delay: 2s;
+      animation-duration: 21s;
+      font-size: 2.2rem;
+    }
+
+    .floating-hearts span:nth-child(4) {
+      left: 76%;
+      animation-delay: 8s;
+      animation-duration: 25s;
+      font-size: 2.5rem;
+    }
+
+    .floating-hearts span:nth-child(5) {
+      left: 91%;
+      animation-delay: 4s;
+      animation-duration: 20s;
+      font-size: 1.9rem;
+    }
+
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+      }
+      12% {
+        opacity: 1;
+      }
+      82% {
+        opacity: 0.72;
+      }
+      100% {
+        transform: translateY(-115vh) translateX(18px) rotate(12deg);
+        opacity: 0;
+      }
+    }
+
     @media (max-width: 390px) {
       .letter {
         padding-left: 14px;
@@ -675,6 +746,14 @@
 </head>
 
 <body class="locked">
+
+  <div class="floating-hearts" aria-hidden="true">
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+    <span>♡</span>
+  </div>
   <div class="intro" id="intro">
     <div class="intro-card">
       <div class="intro-seal">J♡L</div>
@@ -776,7 +855,7 @@
             <div class="memory-content">
               <div class="memory-date">April 10</div>
               <div class="memory-title">First message</div>
-              <div class="memory-desc">One shy hello that changed everything.</div>
+              <div class="memory-desc">One shy hello that quietly changed everything.</div>
             </div>
           </div>
         </div>
@@ -792,7 +871,7 @@
             <div class="memory-content">
               <div class="memory-date">April 19</div>
               <div class="memory-title">Sunday Selfie Tradition Started</div>
-              <div class="memory-desc">The first of many Sunday smiles.</div>
+              <div class="memory-desc">The first smile that became our little Sunday tradition.</div>
             </div>
           </div>
         </div>
@@ -808,7 +887,7 @@
             <div class="memory-content">
               <div class="memory-date">June 4</div>
               <div class="memory-title">First Meet</div>
-              <div class="memory-desc">The day calls became real.</div>
+              <div class="memory-desc">The day all those calls finally became real.</div>
             </div>
           </div>
         </div>
@@ -824,7 +903,7 @@
             <div class="memory-content">
               <div class="memory-date">June 5 (Morning)</div>
               <div class="memory-title">Breakfast Date</div>
-              <div class="memory-desc">A simple morning that felt so special.</div>
+              <div class="memory-desc">A simple morning that somehow felt unforgettable.</div>
             </div>
           </div>
         </div>
@@ -840,7 +919,7 @@
             <div class="memory-content">
               <div class="memory-date">June 5 (Evening)</div>
               <div class="memory-title">Official Pennukanal</div>
-              <div class="memory-desc">The day our families became part of our story.</div>
+              <div class="memory-desc">The day our families stepped into the story God was writing for us.</div>
             </div>
           </div>
         </div>
@@ -856,7 +935,7 @@
             <div class="memory-content">
               <div class="memory-date">June 6</div>
               <div class="memory-title">House Date at Alex Uncle's House</div>
-              <div class="memory-desc">A peaceful day that felt like us.</div>
+              <div class="memory-desc">A peaceful day that felt calm, warm, and completely like us.</div>
             </div>
           </div>
         </div>
@@ -872,7 +951,7 @@
             <div class="memory-content">
               <div class="memory-date">June 8</div>
               <div class="memory-title">A special drive to meet Kanmani</div>
-              <div class="memory-desc">Because any distance feels small when it leads to you.</div>
+              <div class="memory-desc">Because any distance feels small when it leads me back to you.</div>
             </div>
           </div>
         </div>
@@ -888,7 +967,7 @@
             <div class="memory-content">
               <div class="memory-date">Oct 10</div>
               <div class="memory-title">Proposal</div>
-              <div class="memory-desc">The day I ask you in front of the world.</div>
+              <div class="memory-desc">The day I ask you to be mine forever in front of the world.</div>
             </div>
           </div>
         </div>
@@ -904,7 +983,7 @@
             <div class="memory-content">
               <div class="memory-date">Jan 3</div>
               <div class="memory-title">Wedding</div>
-              <div class="memory-desc">The day forever begins.</div>
+              <div class="memory-desc">The day forever begins with God, family, and us.</div>
             </div>
           </div>
         </div>
@@ -920,7 +999,7 @@
             <div class="memory-content">
               <div class="memory-date">Forever</div>
               <div class="memory-title">Forever</div>
-              <div class="memory-desc">Breakfasts, travels, little fights, prayers, and choosing each other every day.</div>
+              <div class="memory-desc">Breakfasts, travels, little fights, prayers, and choosing each other again every day.</div>
             </div>
           </div>
         </div>
