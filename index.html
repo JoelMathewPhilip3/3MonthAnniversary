@@ -18,10 +18,11 @@
       --paper-3: #bf8554;
 
       --ink: #2a170f;
-      --ink-soft: rgba(42, 23, 15, 0.78);
-      --cream: #f3dfc1;
-      --coffee: #6c4329;
+      --ink-soft: rgba(42, 23, 15, 0.82);
+      --card: rgba(243, 223, 193, 0.94);
+      --card-2: rgba(233, 206, 170, 0.95);
       --shadow: rgba(20, 10, 4, 0.5);
+      --arrow: #6e4327;
     }
 
     * {
@@ -36,7 +37,7 @@
 
     body {
       min-height: 100vh;
-      padding: 28px 14px 80px;
+      padding: 20px 10px 90px;
       overflow-x: hidden;
       background:
         radial-gradient(circle at 12% 16%, rgba(255, 225, 185, 0.18), transparent 25%),
@@ -56,13 +57,13 @@
     .scene::before {
       content: "";
       position: fixed;
-      width: 420px;
-      height: 420px;
+      width: 360px;
+      height: 360px;
       border-radius: 50%;
-      background: rgba(255, 223, 178, 0.12);
-      filter: blur(75px);
+      background: rgba(255, 223, 178, 0.11);
+      filter: blur(70px);
       top: -30px;
-      left: 40px;
+      left: 10px;
       pointer-events: none;
       z-index: -1;
     }
@@ -70,19 +71,11 @@
     .fade-in {
       opacity: 0;
       transform: translateY(18px);
-      animation: fadeIn 1.2s ease forwards;
+      animation: fadeIn 1.1s ease forwards;
     }
 
     .delay-1 {
-      animation-delay: 0.25s;
-    }
-
-    .delay-2 {
-      animation-delay: 0.45s;
-    }
-
-    .delay-3 {
-      animation-delay: 0.65s;
+      animation-delay: 0.35s;
     }
 
     @keyframes fadeIn {
@@ -94,12 +87,10 @@
 
     .letter {
       position: relative;
-      width: min(92vw, 760px);
-      min-height: 820px;
-      margin: 0 auto 70px;
-      padding: 60px 52px 64px;
+      width: min(95vw, 820px);
+      margin: 0 auto 34px;
+      padding: 42px 22px 46px;
       overflow: hidden;
-
       background:
         radial-gradient(circle at 15% 18%, rgba(96, 50, 24, 0.22), transparent 16%),
         radial-gradient(circle at 82% 20%, rgba(100, 53, 25, 0.18), transparent 17%),
@@ -107,27 +98,22 @@
         radial-gradient(circle at 76% 84%, rgba(86, 42, 20, 0.16), transparent 17%),
         radial-gradient(circle at 49% 42%, rgba(255, 245, 225, 0.22), transparent 23%),
         linear-gradient(145deg, var(--paper-1), var(--paper-2) 58%, var(--paper-3));
-
       clip-path: polygon(
         1.5% 3%, 5% 1.4%, 10% 3.2%, 16% 1.5%, 23% 2.8%, 30% 1.2%,
         37% 3.1%, 45% 1.6%, 53% 2.9%, 61% 1.4%, 69% 3%, 77% 1.5%,
         84% 2.7%, 91% 1.8%, 97.8% 3%,
-
         98.4% 9%, 97.1% 16%, 99% 24%, 96.4% 31%, 98.5% 39%,
         96.5% 47%, 98.7% 56%, 96.1% 65%, 98.3% 74%, 96.5% 83%,
         97.8% 91%, 95.2% 98%,
-
         89% 98.5%, 82% 96.8%, 74% 99%, 67% 97%, 59% 98.7%,
         51% 96.7%, 43% 99%, 35% 97.1%, 27% 98.6%, 19% 96.5%,
         11% 99%, 5% 97.2%, 2.2% 94%,
-
         3.5% 86%, 1.3% 78%, 3.6% 69%, 1.4% 60%, 3.3% 52%,
         1.1% 44%, 3.2% 35%, 1.4% 26%, 3.1% 18%, 1.5% 10%
       );
-
       box-shadow:
-        0 34px 82px var(--shadow),
-        inset 0 0 38px rgba(74, 36, 16, 0.24);
+        0 24px 58px var(--shadow),
+        inset 0 0 34px rgba(74, 36, 16, 0.24);
     }
 
     .letter::before {
@@ -156,11 +142,7 @@
         linear-gradient(110deg, transparent 0%, transparent 14%, rgba(88, 42, 18, 0.12) 15%, rgba(255,255,255,0.12) 16%, rgba(88, 42, 18, 0.08) 17%, transparent 19%, transparent 100%),
         linear-gradient(72deg, transparent 0%, transparent 29%, rgba(255,255,255,0.14) 30%, rgba(84, 40, 17, 0.11) 31%, transparent 33%, transparent 100%),
         linear-gradient(148deg, transparent 0%, transparent 44%, rgba(82, 39, 16, 0.11) 45%, rgba(255,255,255,0.10) 46%, transparent 48%, transparent 100%),
-        linear-gradient(38deg, transparent 0%, transparent 58%, rgba(255,255,255,0.12) 59%, rgba(77, 36, 15, 0.1) 60%, transparent 62%, transparent 100%),
-        linear-gradient(92deg, transparent 0%, transparent 68%, rgba(77, 36, 15, 0.1) 69%, rgba(255,255,255,0.1) 70%, transparent 72%, transparent 100%),
-        radial-gradient(circle at 34% 33%, rgba(255,255,255,0.14), transparent 12%),
-        radial-gradient(circle at 63% 54%, rgba(77, 36, 15, 0.1), transparent 15%),
-        radial-gradient(circle at 45% 78%, rgba(255,255,255,0.11), transparent 12%);
+        linear-gradient(38deg, transparent 0%, transparent 58%, rgba(255,255,255,0.12) 59%, rgba(77, 36, 15, 0.1) 60%, transparent 62%, transparent 100%);
       mix-blend-mode: multiply;
       opacity: 0.98;
     }
@@ -170,7 +152,7 @@
       inset: 0;
       pointer-events: none;
       z-index: 1;
-      opacity: 0.34;
+      opacity: 0.30;
       background-image:
         radial-gradient(rgba(70, 34, 14, 0.22) 0.7px, transparent 0.7px),
         radial-gradient(rgba(255, 245, 224, 0.18) 0.8px, transparent 0.8px);
@@ -183,7 +165,7 @@
       position: absolute;
       pointer-events: none;
       z-index: 4;
-      opacity: 0.72;
+      opacity: 0.65;
     }
 
     .crease.one {
@@ -213,50 +195,38 @@
       transform: rotate(6deg);
     }
 
-    .crease.four {
-      width: 1px;
-      height: 52%;
-      top: 26%;
-      left: 71%;
-      background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.1), rgba(78, 38, 15, 0.16), transparent);
-      transform: skewX(9deg);
-      opacity: 0.45;
-    }
-
     .letter-text {
       position: relative;
       z-index: 5;
-      max-width: 585px;
+      max-width: 100%;
       font-family: "Dancing Script", cursive;
-      font-size: clamp(1.72rem, 4.4vw, 2.45rem);
-      line-height: 1.43;
+      font-size: clamp(1.3rem, 5.3vw, 1.95rem);
+      line-height: 1.42;
       color: var(--ink);
-      text-shadow:
-        0 1px 0 rgba(255,255,255,0.22),
-        0 0 1px rgba(40, 20, 10, 0.16);
+      text-shadow: 0 1px 0 rgba(255,255,255,0.22);
     }
 
     .letter-text p {
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .signature {
-      margin-top: 38px;
+      margin-top: 28px;
       text-align: left;
-      font-size: clamp(2rem, 5vw, 3rem);
+      font-size: clamp(1.8rem, 7vw, 2.6rem);
       line-height: 1.18;
     }
 
     .section {
-      width: min(92vw, 860px);
-      margin: 0 auto 64px;
-      padding: 34px 30px;
+      width: min(95vw, 860px);
+      margin: 0 auto 36px;
+      padding: 26px 14px 30px;
       border-radius: 22px;
       background:
-        linear-gradient(145deg, rgba(239, 215, 179, 0.92), rgba(190, 137, 88, 0.86));
+        linear-gradient(145deg, rgba(239, 215, 179, 0.95), rgba(190, 137, 88, 0.9));
       box-shadow:
-        0 22px 55px rgba(19, 8, 3, 0.34),
-        inset 0 0 26px rgba(77, 36, 15, 0.12);
+        0 18px 44px rgba(19, 8, 3, 0.34),
+        inset 0 0 20px rgba(77, 36, 15, 0.12);
       border: 1px solid rgba(255, 239, 210, 0.22);
       position: relative;
       overflow: hidden;
@@ -276,9 +246,9 @@
       position: relative;
       z-index: 2;
       font-family: "Dancing Script", cursive;
-      font-size: clamp(2.3rem, 7vw, 4rem);
-      line-height: 1;
-      margin-bottom: 24px;
+      font-size: clamp(2rem, 8vw, 3.3rem);
+      line-height: 1.08;
+      margin-bottom: 8px;
       color: var(--ink);
       text-align: center;
     }
@@ -287,138 +257,128 @@
       position: relative;
       z-index: 2;
       text-align: center;
-      font-size: 1.08rem;
+      font-size: 1rem;
       color: var(--ink-soft);
-      margin: -12px auto 30px;
+      margin: 0 auto 22px;
       max-width: 620px;
+      padding: 0 6px;
     }
 
-    .timeline {
+    .memory-flow {
       position: relative;
       z-index: 2;
-      display: grid;
-      gap: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      align-items: center;
     }
 
-    .timeline-item {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 18px;
-      align-items: start;
-      padding: 20px;
-      border-radius: 16px;
-      background: rgba(255, 238, 212, 0.38);
-      border: 1px solid rgba(93, 49, 24, 0.12);
-    }
-
-    .timeline-date {
-      font-weight: 700;
-      font-size: 1.05rem;
-      color: #4c2b19;
-    }
-
-    .timeline-text {
-      font-size: 1.2rem;
-      line-height: 1.45;
-      color: var(--ink-soft);
-    }
-
-    .reasons-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .reason-card {
-      padding: 22px;
-      border-radius: 18px;
-      background: rgba(255, 238, 212, 0.38);
-      border: 1px solid rgba(93, 49, 24, 0.12);
-      min-height: 140px;
-    }
-
-    .reason-number {
-      font-family: "Dancing Script", cursive;
-      font-size: 2.3rem;
-      line-height: 1;
-      color: #5d341e;
-      margin-bottom: 8px;
-    }
-
-    .reason-card p {
-      font-size: 1.16rem;
-      line-height: 1.45;
-      color: var(--ink-soft);
-    }
-
-    .photo-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .photo-card {
-      background: #f3dfc1;
-      padding: 12px 12px 18px;
-      border-radius: 4px;
-      box-shadow:
-        0 16px 30px rgba(38, 18, 8, 0.28),
-        inset 0 0 10px rgba(83, 43, 18, 0.08);
-      transform: rotate(-1deg);
-    }
-
-    .photo-card:nth-child(even) {
-      transform: rotate(1deg);
-    }
-
-    .photo-card:nth-child(3n) {
-      transform: rotate(0.4deg);
-    }
-
-    .photo-card img {
+    .memory-card {
       width: 100%;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      display: block;
-      border-radius: 2px;
-      background: #caa275;
-      filter: sepia(0.18) contrast(0.96) saturate(0.88);
+      max-width: 720px;
+      background: linear-gradient(180deg, var(--card), var(--card-2));
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow:
+        0 14px 28px rgba(32, 15, 7, 0.18),
+        inset 0 0 12px rgba(92, 48, 24, 0.07);
+      border: 1px solid rgba(98, 53, 28, 0.10);
     }
 
-    .photo-info {
-      padding-top: 12px;
+    .memory-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .memory-image-wrap {
+      background: rgba(255,255,255,0.26);
+      border-radius: 16px;
+      padding: 8px;
+      overflow: hidden;
+      min-height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .memory-image-wrap img {
+      width: 100%;
+      height: auto;
+      max-height: 460px;
+      object-fit: contain;
+      display: block;
+      border-radius: 10px;
+      background: #e9d3b3;
+    }
+
+    .memory-content {
+      padding: 2px 4px 6px;
       text-align: center;
     }
 
-    .photo-date {
+    .memory-date {
       font-weight: 700;
-      font-size: 0.98rem;
-      color: #4c2b19;
-      margin-bottom: 4px;
+      font-size: 1.05rem;
+      color: #4e2f1d;
+      margin-bottom: 6px;
     }
 
-    .photo-caption {
+    .memory-title {
       font-family: "Dancing Script", cursive;
-      font-size: 1.45rem;
+      font-size: clamp(1.6rem, 6vw, 2.2rem);
+      line-height: 1.05;
       color: var(--ink);
-      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .memory-desc {
+      font-size: 1.02rem;
+      line-height: 1.42;
+      color: var(--ink-soft);
+    }
+
+    .memory-arrow {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0 12px;
+    }
+
+    .memory-arrow .line {
+      width: 3px;
+      height: 34px;
+      background: linear-gradient(to bottom, rgba(110,67,39,0.2), rgba(110,67,39,0.95));
+      border-radius: 999px;
+      position: relative;
+    }
+
+    .memory-arrow .line::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -7px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 9px solid transparent;
+      border-right: 9px solid transparent;
+      border-top: 14px solid var(--arrow);
     }
 
     .music-btn {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
+      right: 14px;
+      bottom: 14px;
       z-index: 20;
       border: 1px solid rgba(255, 233, 199, 0.35);
-      background: rgba(62, 34, 20, 0.82);
+      background: rgba(62, 34, 20, 0.86);
       color: #f6dfbd;
       backdrop-filter: blur(10px);
       border-radius: 999px;
-      padding: 12px 16px;
+      padding: 11px 15px;
       font-family: "Cormorant Garamond", serif;
       font-size: 1rem;
       cursor: pointer;
@@ -426,57 +386,32 @@
     }
 
     .music-btn:hover {
-      background: rgba(84, 47, 28, 0.9);
+      background: rgba(84, 47, 28, 0.92);
     }
 
-    @media (max-width: 820px) {
+    @media (min-width: 760px) {
       body {
-        align-items: flex-start;
-        padding: 18px 10px 78px;
+        padding: 28px 14px 90px;
       }
 
       .letter {
-        width: 100%;
-        min-height: auto;
-        padding: 46px 28px 52px;
-        margin-bottom: 48px;
-      }
-
-      .letter-text {
-        font-size: clamp(1.48rem, 7vw, 2rem);
-        line-height: 1.38;
-      }
-
-      .letter-text p {
-        margin-bottom: 21px;
-      }
-
-      .signature {
-        margin-top: 28px;
+        padding: 56px 44px 58px;
+        margin-bottom: 50px;
       }
 
       .section {
-        padding: 30px 18px;
-        margin-bottom: 44px;
+        padding: 34px 24px 36px;
       }
 
-      .timeline-item {
-        grid-template-columns: 1fr;
-        gap: 6px;
+      .memory-inner {
+        grid-template-columns: minmax(280px, 350px) 1fr;
+        gap: 18px;
+        text-align: left;
       }
 
-      .reasons-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .photo-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-
-      .photo-card {
-        max-width: 360px;
-        margin: 0 auto;
+      .memory-content {
+        text-align: left;
+        padding: 4px 6px;
       }
     }
   </style>
@@ -489,40 +424,35 @@
       <div class="crease one"></div>
       <div class="crease two"></div>
       <div class="crease three"></div>
-      <div class="crease four"></div>
 
       <div class="letter-text">
         <p>Dear Kanmani,</p>
 
         <p>
-          Three months may not sound like a long time to the world,
-          but with you, it already feels like my heart has found
-          a place it truly belongs.
+          Happy 3 months anniversary Maria Kutty! I cannot believe its already been 3 months since that first message!
+          I remember being shy sending that first message, that first hello, not knowing how it will turn out.
+          Pakshe, more than that I remember asking god when I saw your profile first
+          "Daivamay ee penn kochinay ennik thane theranamay".
+          God definitely heard that prayer and he bought the most beautiful angel into my life!
         </p>
 
         <p>
-          Somewhere between our first messages, our calls, our little laughs,
-          and the quiet moments where I simply thank God for you,
-          you became so much more than just a part of my days.
-          You became one of the best parts of my life.
+          I always am thanking god for bringing you into my life. It was amazing how I knew within the first few days itself that you were the one.
+          The first thing I fell for, of course, was that beautiful smile of yours.
+          Aa pal kanich ola chiri, ente mole I feel I never can stop loving that smile.
+          Then within a few days I got to understand the amazing person behind that smile.
+          I felt a special comfort when I was talking to you over phone and that comfort only increased once we met in person!
+          Ninte kude I can be my true self and loving you is the easiest thing I can do.
+          You have become so precious for me and I will try my best to always keep you happy forever.
         </p>
 
         <p>
-          You have this beautiful way of making even ordinary moments feel special.
-          Your warmth, your heart, your patience, and the peace you bring
-          into my life mean more to me than I can ever say perfectly.
-        </p>
-
-        <p>
-          Loving you has felt natural, comforting, and real.
-          And if these three months have already given me so many beautiful memories,
-          I can only smile thinking about all the moments still waiting for us.
-        </p>
-
-        <p>
-          So today, I just want to tell you thank you —
-          for being you, for letting me love you,
-          and for making my life sweeter in ways you probably do not even realize.
+          You already know I spend most of the day just looking at our photos together and am always dreaming of our future together.
+          There is going to be a lot of ups and downs, atha jeevitham, but I will be there to bring us back together after any fights.
+          Kurach santoshangal, penakangal and cringe ilada pinne ennada jeevitham!
+          I cannot wait to propose to you in <span id="proposalDays">...</span> days and show you to the whole world.
+          Only <span id="marriageDays">...</span> days left to our marriage kanmani and then we will be together forever!
+          Looking forward to waking up beside you every day, making you breakfast in bed some days, annoying you with my habits, travelling around the world, spending every small moment together and supporting each other in everything!
         </p>
 
         <p>
@@ -537,123 +467,157 @@
     </section>
 
     <section class="section fade-in delay-1">
-      <h2 class="section-title">Our Little Timeline</h2>
+      <h2 class="section-title">Our 3 month Memories and Future!</h2>
       <p class="section-subtitle">
-        A few small dates that quietly became special chapters in our story.
+        From our very first hello to forever.
       </p>
 
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">March 24</div>
-          <div class="timeline-text">
-            The day you sent interest back, and a small beginning started becoming something meaningful.
+      <div class="memory-flow">
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image1.jpg" alt="First message memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">April 10</div>
+              <div class="memory-title">First message</div>
+              <div class="memory-desc">The message that started everything.</div>
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">April 10</div>
-          <div class="timeline-text">
-            My first WhatsApp message to you. A simple hello that became one of my favorite memories.
+        <div class="memory-arrow"><div class="line"></div></div>
+
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image2.jpg" alt="Sunday selfie tradition memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">April 19</div>
+              <div class="memory-title">Sunday Selfie Tradition Started</div>
+              <div class="memory-desc">One of our cutest little traditions began.</div>
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">April 11</div>
-          <div class="timeline-text">
-            Our first calls began, and slowly your voice became one of the most comforting parts of my day.
+        <div class="memory-arrow"><div class="line"></div></div>
+
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image3.jpg" alt="First meet memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">June 4</div>
+              <div class="memory-title">First Meet</div>
+              <div class="memory-desc">The day we finally met in person.</div>
+            </div>
           </div>
         </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">Today</div>
-          <div class="timeline-text">
-            Three months of us. Three months of laughter, care, prayers, love, and memories I never want to forget.
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="memory-arrow"><div class="line"></div></div>
 
-    <section class="section fade-in delay-2">
-      <h2 class="section-title">Reasons I Love You</h2>
-      <p class="section-subtitle">
-        Not all the reasons, because that list would never really end.
-      </p>
-
-      <div class="reasons-grid">
-        <div class="reason-card">
-          <div class="reason-number">01</div>
-          <p>You make ordinary moments feel warm, peaceful, and meaningful.</p>
-        </div>
-
-        <div class="reason-card">
-          <div class="reason-number">02</div>
-          <p>You have a caring heart that makes people feel safe around you.</p>
-        </div>
-
-        <div class="reason-card">
-          <div class="reason-number">03</div>
-          <p>Your smile, your voice, and your little ways have become so precious to me.</p>
-        </div>
-
-        <div class="reason-card">
-          <div class="reason-number">04</div>
-          <p>You remind me that love can feel gentle, honest, and full of peace.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section fade-in delay-3">
-      <h2 class="section-title">Our Memories</h2>
-      <p class="section-subtitle">
-        Six little pieces of our story. Replace the images, dates, and captions whenever you are ready.
-      </p>
-
-      <div class="photo-grid">
-        <div class="photo-card">
-          <img src="image1.jpg" alt="Memory image 1">
-          <div class="photo-info">
-            <div class="photo-date">March 24, 2026</div>
-            <div class="photo-caption">The beginning</div>
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image4.jpg" alt="Breakfast date memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">June 5 (Morning)</div>
+              <div class="memory-title">Breakfast Date</div>
+              <div class="memory-desc">A sweet start to a beautiful day together.</div>
+            </div>
           </div>
         </div>
 
-        <div class="photo-card">
-          <img src="image2.jpg" alt="Memory image 2">
-          <div class="photo-info">
-            <div class="photo-date">April 10, 2026</div>
-            <div class="photo-caption">First message</div>
+        <div class="memory-arrow"><div class="line"></div></div>
+
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image5.jpg" alt="Official pennukanal memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">June 5 (Evening)</div>
+              <div class="memory-title">Official Pennukanal</div>
+              <div class="memory-desc">A special evening that made everything feel even more real.</div>
+            </div>
           </div>
         </div>
 
-        <div class="photo-card">
-          <img src="image3.jpg" alt="Memory image 3">
-          <div class="photo-info">
-            <div class="photo-date">April 11, 2026</div>
-            <div class="photo-caption">First call</div>
+        <div class="memory-arrow"><div class="line"></div></div>
+
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image6.jpg" alt="House date memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">June 6</div>
+              <div class="memory-title">House Date at Alex Uncle's House</div>
+              <div class="memory-desc">A warm and simple memory that means a lot to us.</div>
+            </div>
           </div>
         </div>
 
-        <div class="photo-card">
-          <img src="image4.jpg" alt="Memory image 4">
-          <div class="photo-info">
-            <div class="photo-date">Add date here</div>
-            <div class="photo-caption">Our little laugh</div>
+        <div class="memory-arrow"><div class="line"></div></div>
+
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image7.jpg" alt="Special drive memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">June 8</div>
+              <div class="memory-title">A special drive to meet Kanmani</div>
+              <div class="memory-desc">One more drive, one more reason to smile.</div>
+            </div>
           </div>
         </div>
 
-        <div class="photo-card">
-          <img src="image5.jpg" alt="Memory image 5">
-          <div class="photo-info">
-            <div class="photo-date">Add date here</div>
-            <div class="photo-caption">A favorite moment</div>
+        <div class="memory-arrow"><div class="line"></div></div>
+
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image8.jpg" alt="Proposal memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">Oct 10</div>
+              <div class="memory-title">Proposal</div>
+              <div class="memory-desc">The day I get to show you to the whole world.</div>
+            </div>
           </div>
         </div>
 
-        <div class="photo-card">
-          <img src="image6.jpg" alt="Memory image 6">
-          <div class="photo-info">
-            <div class="photo-date">Today</div>
-            <div class="photo-caption">Three months of us</div>
+        <div class="memory-arrow"><div class="line"></div></div>
+
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image9.jpg" alt="Wedding memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">Jan 3</div>
+              <div class="memory-title">Wedding</div>
+              <div class="memory-desc">The day we begin forever together.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="memory-arrow"><div class="line"></div></div>
+
+        <div class="memory-card">
+          <div class="memory-inner">
+            <div class="memory-image-wrap">
+              <img src="image10.jpg" alt="Forever memory">
+            </div>
+            <div class="memory-content">
+              <div class="memory-date">Forever</div>
+              <div class="memory-title">Forever</div>
+              <div class="memory-desc">Every little moment after that, together.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -669,7 +633,6 @@
   <script>
     const musicBtn = document.getElementById("musicBtn");
     const bgMusic = document.getElementById("bgMusic");
-
     let isPlaying = false;
 
     musicBtn.addEventListener("click", async () => {
@@ -687,6 +650,20 @@
         musicBtn.textContent = "Music unavailable";
       }
     });
+
+    function getDaysLeft(targetDateString) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const targetDate = new Date(targetDateString);
+      targetDate.setHours(0, 0, 0, 0);
+
+      const difference = targetDate - today;
+      return Math.max(0, Math.ceil(difference / (1000 * 60 * 60 * 24)));
+    }
+
+    document.getElementById("proposalDays").textContent = getDaysLeft("2026-10-10");
+    document.getElementById("marriageDays").textContent = getDaysLeft("2027-01-03");
   </script>
 </body>
 </html>
