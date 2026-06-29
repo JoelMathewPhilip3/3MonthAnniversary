@@ -613,8 +613,8 @@
 
     .music-btn {
       position: fixed;
-      right: 10px;
-      bottom: 10px;
+      right: 8px;
+      bottom: 8px;
       z-index: 20;
       border: 1px solid rgba(255, 233, 199, 0.52);
       background:
@@ -622,13 +622,14 @@
       color: #f8e2bf;
       backdrop-filter: blur(10px);
       border-radius: 999px;
-      padding: 18px 25px;
+      padding: 24px 34px;
+      min-height: 72px;
       font-family: "Cormorant Garamond", serif;
-      font-size: 1.32rem;
+      font-size: 1.65rem;
       font-weight: 800;
       cursor: pointer;
       box-shadow:
-        0 16px 38px rgba(20, 8, 3, 0.5),
+        0 18px 44px rgba(20, 8, 3, 0.58),
         inset 0 0 14px rgba(255, 230, 190, 0.1);
       animation: musicPulse 2.2s ease-in-out infinite;
     }
@@ -637,13 +638,13 @@
       0%, 100% {
         transform: scale(1);
         box-shadow:
-          0 16px 38px rgba(20, 8, 3, 0.5),
+          0 18px 44px rgba(20, 8, 3, 0.58),
           0 0 0 rgba(248, 226, 191, 0);
       }
       50% {
         transform: scale(1.05);
         box-shadow:
-          0 18px 42px rgba(20, 8, 3, 0.55),
+          0 22px 50px rgba(20, 8, 3, 0.62),
           0 0 20px rgba(248, 226, 191, 0.28);
       }
     }
@@ -660,8 +661,9 @@
       }
 
       .music-btn {
-        padding: 17px 23px;
-        font-size: 1.25rem;
+        padding: 23px 32px;
+        min-height: 70px;
+        font-size: 1.55rem;
       }
 
       .intro-card {
@@ -676,7 +678,7 @@
   <div class="intro" id="intro">
     <div class="intro-card">
       <div class="intro-seal">J♡L</div>
-      <h1>For Libina</h1>
+      <h1>For Libi ♡</h1>
       <p>On our 3 months, a little letter from Achachen to Kanmani.</p>
       <button class="open-btn" id="openLetterBtn" type="button">Open Letter ♡</button>
     </div>
