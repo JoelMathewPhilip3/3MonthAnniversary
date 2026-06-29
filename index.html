@@ -17,8 +17,8 @@
       --paper-3: #bf8554;
       --ink: #2a170f;
       --ink-soft: rgba(42, 23, 15, 0.84);
-      --card: rgba(243, 223, 193, 0.94);
-      --card-2: rgba(233, 206, 170, 0.95);
+      --card: rgba(243, 223, 193, 0.96);
+      --card-2: rgba(233, 206, 170, 0.96);
       --shadow: rgba(20, 10, 4, 0.5);
       --arrow: #6e4327;
       --gold: #d6a456;
@@ -37,7 +37,7 @@
 
     body {
       min-height: 100vh;
-      padding: 8px 6px 100px;
+      padding: 0 0 125px;
       overflow-x: hidden;
       background:
         radial-gradient(circle at 12% 16%, rgba(255, 225, 185, 0.18), transparent 25%),
@@ -58,7 +58,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 14px;
       background:
         radial-gradient(circle at 20% 18%, rgba(255, 225, 185, 0.18), transparent 28%),
         radial-gradient(circle at 80% 78%, rgba(40, 18, 8, 0.44), transparent 34%),
@@ -73,16 +73,17 @@
     }
 
     .intro-card {
-      width: min(92vw, 430px);
-      padding: 42px 26px;
+      width: min(96vw, 540px);
+      min-height: 470px;
+      padding: 60px 30px;
       text-align: center;
-      border-radius: 24px;
+      border-radius: 32px;
       background:
-        linear-gradient(145deg, rgba(241, 221, 191, 0.95), rgba(184, 126, 76, 0.9));
+        linear-gradient(145deg, rgba(241, 221, 191, 0.97), rgba(184, 126, 76, 0.94));
       box-shadow:
-        0 30px 70px rgba(15, 6, 2, 0.55),
-        inset 0 0 28px rgba(82, 42, 18, 0.15);
-      border: 1px solid rgba(255, 238, 205, 0.28);
+        0 34px 80px rgba(15, 6, 2, 0.58),
+        inset 0 0 32px rgba(82, 42, 18, 0.16);
+      border: 1px solid rgba(255, 238, 205, 0.32);
       position: relative;
       overflow: hidden;
     }
@@ -98,20 +99,20 @@
     }
 
     .intro-seal {
-      width: 74px;
-      height: 74px;
+      width: 104px;
+      height: 104px;
       border-radius: 50%;
-      margin: 0 auto 22px;
+      margin: 0 auto 30px;
       display: grid;
       place-items: center;
       color: #f5d6a5;
       background:
         radial-gradient(circle at 32% 26%, #9f3528, var(--wax) 62%, #3b0e0a);
       box-shadow:
-        0 10px 24px rgba(44, 12, 7, 0.35),
-        inset 0 0 12px rgba(255, 220, 170, 0.18);
+        0 12px 28px rgba(44, 12, 7, 0.38),
+        inset 0 0 14px rgba(255, 220, 170, 0.18);
       font-family: "Dancing Script", cursive;
-      font-size: 1.65rem;
+      font-size: 2.25rem;
       position: relative;
       z-index: 2;
     }
@@ -120,61 +121,51 @@
       position: relative;
       z-index: 2;
       font-family: "Dancing Script", cursive;
-      font-size: clamp(2.6rem, 10vw, 4rem);
+      font-size: clamp(3.6rem, 16vw, 5.3rem);
       line-height: 1;
-      margin-bottom: 14px;
+      margin-bottom: 22px;
     }
 
     .intro p {
       position: relative;
       z-index: 2;
-      font-size: 1.15rem;
-      line-height: 1.45;
+      font-size: 1.42rem;
+      line-height: 1.5;
       color: var(--ink-soft);
-      margin-bottom: 28px;
+      margin-bottom: 38px;
     }
 
     .open-btn {
       position: relative;
       z-index: 2;
-      border: 1px solid rgba(255, 233, 199, 0.45);
+      border: 1px solid rgba(255, 233, 199, 0.5);
       background:
-        linear-gradient(135deg, rgba(88, 47, 27, 0.96), rgba(45, 24, 14, 0.96));
+        linear-gradient(135deg, rgba(88, 47, 27, 0.98), rgba(45, 24, 14, 0.98));
       color: #f8e2bf;
       border-radius: 999px;
-      padding: 14px 24px;
+      padding: 19px 34px;
       font-family: "Cormorant Garamond", serif;
-      font-size: 1.12rem;
+      font-size: 1.4rem;
       font-weight: 700;
       cursor: pointer;
-      box-shadow: 0 14px 30px rgba(20, 8, 3, 0.36);
+      box-shadow: 0 16px 34px rgba(20, 8, 3, 0.4);
     }
 
     .scene {
       width: 100%;
-      max-width: 980px;
-      margin: 0 auto;
+      max-width: none;
+      margin: 0;
       position: relative;
-    }
-
-    .scene::before {
-      content: "";
-      position: fixed;
-      width: 360px;
-      height: 360px;
-      border-radius: 50%;
-      background: rgba(255, 223, 178, 0.11);
-      filter: blur(70px);
-      top: -30px;
-      left: 10px;
-      pointer-events: none;
-      z-index: -1;
     }
 
     .fade-in {
       opacity: 0;
       transform: translateY(18px);
       animation: fadeIn 1.1s ease forwards;
+    }
+
+    .delay-1 {
+      animation-delay: 0.35s;
     }
 
     .reveal {
@@ -188,10 +179,6 @@
       transform: translateY(0);
     }
 
-    .delay-1 {
-      animation-delay: 0.35s;
-    }
-
     @keyframes fadeIn {
       to {
         opacity: 1;
@@ -201,10 +188,10 @@
 
     .letter {
       position: relative;
-      width: min(98vw, 900px);
-      min-height: calc(100vh - 18px);
-      margin: 0 auto 18px;
-      padding: 42px 22px 50px;
+      width: 100vw;
+      min-height: 100vh;
+      margin: 0 0 18px;
+      padding: 44px 16px 58px;
       overflow: hidden;
       background:
         radial-gradient(circle at 15% 18%, rgba(96, 50, 24, 0.22), transparent 16%),
@@ -213,22 +200,8 @@
         radial-gradient(circle at 76% 84%, rgba(86, 42, 20, 0.16), transparent 17%),
         radial-gradient(circle at 49% 42%, rgba(255, 245, 225, 0.22), transparent 23%),
         linear-gradient(145deg, var(--paper-1), var(--paper-2) 58%, var(--paper-3));
-      clip-path: polygon(
-        1.5% 3%, 5% 1.4%, 10% 3.2%, 16% 1.5%, 23% 2.8%, 30% 1.2%,
-        37% 3.1%, 45% 1.6%, 53% 2.9%, 61% 1.4%, 69% 3%, 77% 1.5%,
-        84% 2.7%, 91% 1.8%, 97.8% 3%,
-        98.4% 9%, 97.1% 16%, 99% 24%, 96.4% 31%, 98.5% 39%,
-        96.5% 47%, 98.7% 56%, 96.1% 65%, 98.3% 74%, 96.5% 83%,
-        97.8% 91%, 95.2% 98%,
-        89% 98.5%, 82% 96.8%, 74% 99%, 67% 97%, 59% 98.7%,
-        51% 96.7%, 43% 99%, 35% 97.1%, 27% 98.6%, 19% 96.5%,
-        11% 99%, 5% 97.2%, 2.2% 94%,
-        3.5% 86%, 1.3% 78%, 3.6% 69%, 1.4% 60%, 3.3% 52%,
-        1.1% 44%, 3.2% 35%, 1.4% 26%, 3.1% 18%, 1.5% 10%
-      );
-      box-shadow:
-        0 22px 54px var(--shadow),
-        inset 0 0 34px rgba(74, 36, 16, 0.24);
+      clip-path: none;
+      box-shadow: inset 0 0 34px rgba(74, 36, 16, 0.24);
     }
 
     .letter::before {
@@ -242,8 +215,8 @@
         radial-gradient(circle at 96% 18%, rgba(80, 36, 14, 0.34), transparent 18%),
         radial-gradient(circle at 7% 86%, rgba(74, 34, 13, 0.32), transparent 17%),
         radial-gradient(circle at 93% 92%, rgba(80, 36, 14, 0.35), transparent 18%),
-        linear-gradient(to right, rgba(77, 36, 15, 0.25), transparent 14%, transparent 86%, rgba(77, 36, 15, 0.24)),
-        linear-gradient(to bottom, rgba(77, 36, 15, 0.22), transparent 12%, transparent 88%, rgba(77, 36, 15, 0.24));
+        linear-gradient(to right, rgba(77, 36, 15, 0.18), transparent 10%, transparent 90%, rgba(77, 36, 15, 0.18)),
+        linear-gradient(to bottom, rgba(77, 36, 15, 0.20), transparent 12%, transparent 88%, rgba(77, 36, 15, 0.22));
       mix-blend-mode: multiply;
     }
 
@@ -280,7 +253,7 @@
       position: absolute;
       pointer-events: none;
       z-index: 4;
-      opacity: 0.22;
+      opacity: 0.18;
     }
 
     .crease.one {
@@ -315,10 +288,10 @@
       z-index: 5;
       text-align: right;
       font-family: "Cormorant Garamond", serif;
-      font-size: 0.98rem;
+      font-size: 1.05rem;
       line-height: 1.35;
       color: rgba(42, 23, 15, 0.66);
-      margin-bottom: 28px;
+      margin-bottom: 30px;
       font-style: italic;
     }
 
@@ -332,28 +305,28 @@
     }
 
     .letter-text .handwritten {
-      font-size: clamp(2.2rem, 8.2vw, 3.2rem);
-      line-height: 1.15;
-      margin-bottom: 34px;
+      font-size: clamp(2.45rem, 10vw, 3.4rem);
+      line-height: 1.12;
+      margin-bottom: 36px;
       color: var(--ink);
     }
 
     .letter-text p {
-      font-size: clamp(1.45rem, 6.1vw, 2.05rem);
-      line-height: 1.58;
-      margin-bottom: 38px;
-      letter-spacing: 0.15px;
-      color: rgba(42, 23, 15, 0.94);
+      font-size: clamp(1.58rem, 7vw, 2.15rem);
+      line-height: 1.56;
+      margin-bottom: 40px;
+      letter-spacing: 0.12px;
+      color: rgba(42, 23, 15, 0.95);
     }
 
     .letter-text .highlight-line {
-      font-size: clamp(1.85rem, 7.2vw, 2.55rem);
+      font-size: clamp(2rem, 8vw, 2.75rem);
       line-height: 1.35;
       font-weight: 700;
-      margin: 48px 0 34px;
+      margin: 50px 0 36px;
       color: #2a170f;
       text-align: center;
-      padding: 14px 8px;
+      padding: 16px 8px;
       border-top: 1px solid rgba(74, 36, 16, 0.18);
       border-bottom: 1px solid rgba(74, 36, 16, 0.18);
     }
@@ -362,20 +335,20 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      margin-top: 38px;
+      gap: 16px;
+      margin-top: 40px;
     }
 
     .signature {
       text-align: left;
-      font-size: clamp(2.2rem, 8vw, 3rem);
+      font-size: clamp(2.45rem, 9vw, 3.25rem);
       line-height: 1.18;
     }
 
     .wax-seal {
-      width: 76px;
-      height: 76px;
-      flex: 0 0 76px;
+      width: 78px;
+      height: 78px;
+      flex: 0 0 78px;
       border-radius: 50%;
       display: grid;
       place-items: center;
@@ -386,14 +359,14 @@
         0 10px 24px rgba(44, 12, 7, 0.3),
         inset 0 0 12px rgba(255, 220, 170, 0.16);
       font-family: "Dancing Script", cursive;
-      font-size: 1.5rem;
+      font-size: 1.55rem;
       transform: rotate(-8deg);
     }
 
     .hidden-love {
       position: relative;
       z-index: 5;
-      margin-top: 22px;
+      margin-top: 24px;
       text-align: center;
     }
 
@@ -402,9 +375,9 @@
       background: transparent;
       font-family: "Dancing Script", cursive;
       color: #69261c;
-      font-size: 2.1rem;
+      font-size: 2.5rem;
       cursor: pointer;
-      padding: 6px 12px;
+      padding: 8px 14px;
     }
 
     .hidden-message {
@@ -413,7 +386,7 @@
       opacity: 0;
       transition: max-height 0.45s ease, opacity 0.45s ease;
       font-family: "Dancing Script", cursive;
-      font-size: 1.7rem;
+      font-size: 1.9rem;
       color: var(--ink);
       margin-top: 4px;
     }
@@ -424,12 +397,12 @@
     }
 
     .scroll-cue {
-      width: min(95vw, 820px);
+      width: 100%;
       margin: 0 auto 34px;
       text-align: center;
-      color: rgba(255, 238, 212, 0.88);
+      color: rgba(255, 238, 212, 0.9);
       font-family: "Cormorant Garamond", serif;
-      font-size: 1.05rem;
+      font-size: 1.18rem;
       letter-spacing: 0.4px;
       animation: bounceCue 1.8s ease-in-out infinite;
     }
@@ -440,16 +413,16 @@
     }
 
     .section {
-      width: min(95vw, 860px);
-      margin: 0 auto 36px;
-      padding: 26px 14px 30px;
-      border-radius: 22px;
+      width: 100vw;
+      margin: 0 0 34px;
+      padding: 28px 12px 34px;
+      border-radius: 0;
       background:
-        linear-gradient(145deg, rgba(239, 215, 179, 0.95), rgba(190, 137, 88, 0.9));
+        linear-gradient(145deg, rgba(239, 215, 179, 0.96), rgba(190, 137, 88, 0.92));
       box-shadow:
         0 18px 44px rgba(19, 8, 3, 0.34),
         inset 0 0 20px rgba(77, 36, 15, 0.12);
-      border: 1px solid rgba(255, 239, 210, 0.22);
+      border: none;
       position: relative;
       overflow: hidden;
     }
@@ -468,35 +441,12 @@
       position: relative;
       z-index: 2;
       font-family: "Dancing Script", cursive;
-      font-size: clamp(2rem, 8vw, 3.3rem);
+      font-size: clamp(2.35rem, 10vw, 3.8rem);
       line-height: 1.08;
-      margin-bottom: 8px;
+      margin-bottom: 24px;
       color: var(--ink);
       text-align: center;
-    }
-
-    .section-subtitle {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      font-size: 1rem;
-      color: var(--ink-soft);
-      margin: 0 auto 22px;
-      max-width: 620px;
-      padding: 0 6px;
-    }
-
-    .bridge-quote {
-      position: relative;
-      z-index: 2;
-      width: min(95vw, 820px);
-      margin: 0 auto 34px;
-      padding: 22px 18px;
-      text-align: center;
-      color: #f4dcbc;
-      font-family: "Dancing Script", cursive;
-      font-size: clamp(1.8rem, 7vw, 2.8rem);
-      line-height: 1.2;
+      padding: 0 8px;
     }
 
     .memory-flow {
@@ -506,13 +456,14 @@
       flex-direction: column;
       gap: 0;
       align-items: center;
+      width: 100%;
     }
 
     .memory-card {
       width: 100%;
-      max-width: 720px;
+      max-width: none;
       background: linear-gradient(180deg, var(--card), var(--card-2));
-      border-radius: 18px;
+      border-radius: 20px;
       padding: 12px;
       box-shadow:
         0 14px 28px rgba(32, 15, 7, 0.18),
@@ -531,12 +482,12 @@
 
     .chapter-tag {
       display: inline-block;
-      margin-bottom: 10px;
-      padding: 5px 10px;
+      margin-bottom: 12px;
+      padding: 7px 12px;
       border-radius: 999px;
       background: rgba(87, 47, 26, 0.14);
       color: #4e2f1d;
-      font-size: 0.88rem;
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.3px;
     }
@@ -549,16 +500,16 @@
     .memory-inner {
       display: grid;
       grid-template-columns: 1fr;
-      gap: 14px;
+      gap: 16px;
       align-items: center;
     }
 
     .memory-image-wrap {
       background: rgba(255,255,255,0.30);
-      border-radius: 16px;
+      border-radius: 18px;
       padding: 6px;
       overflow: hidden;
-      min-height: 180px;
+      min-height: 210px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -566,36 +517,36 @@
 
     .memory-image-wrap img {
       width: 100%;
-      max-height: 480px;
+      max-height: 560px;
       height: auto;
       object-fit: contain;
       display: block;
-      border-radius: 10px;
+      border-radius: 12px;
       background: #e9d3b3;
     }
 
     .memory-content {
-      padding: 2px 4px 6px;
+      padding: 4px 4px 8px;
       text-align: center;
     }
 
     .memory-date {
       font-weight: 700;
-      font-size: 1.05rem;
+      font-size: 1.2rem;
       color: #4e2f1d;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
 
     .memory-title {
       font-family: "Dancing Script", cursive;
-      font-size: 1.9rem;
+      font-size: clamp(2rem, 8.5vw, 2.75rem);
       line-height: 1.05;
       color: var(--ink);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .memory-desc {
-      font-size: 1.02rem;
+      font-size: 1.14rem;
       line-height: 1.5;
       color: var(--ink-soft);
     }
@@ -605,12 +556,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 10px 0 12px;
+      padding: 12px 0 14px;
     }
 
     .memory-arrow .line {
-      width: 3px;
-      height: 34px;
+      width: 4px;
+      height: 40px;
       background: linear-gradient(to bottom, rgba(110,67,39,0.2), rgba(110,67,39,0.95));
       border-radius: 999px;
       position: relative;
@@ -620,27 +571,28 @@
       content: "";
       position: absolute;
       left: 50%;
-      bottom: -7px;
+      bottom: -8px;
       transform: translateX(-50%);
       width: 0;
       height: 0;
-      border-left: 9px solid transparent;
-      border-right: 9px solid transparent;
-      border-top: 14px solid var(--arrow);
+      border-left: 11px solid transparent;
+      border-right: 11px solid transparent;
+      border-top: 16px solid var(--arrow);
     }
 
     .forever-card {
       text-align: center;
-      padding: 34px 22px;
+      padding: 38px 18px;
+      margin-bottom: 0;
     }
 
     .forever-card p {
       position: relative;
       z-index: 2;
-      max-width: 690px;
-      margin: 0 auto 24px;
+      max-width: 100%;
+      margin: 0 auto 28px;
       font-family: "Dancing Script", cursive;
-      font-size: clamp(1.8rem, 7vw, 2.7rem);
+      font-size: clamp(2rem, 8vw, 2.9rem);
       line-height: 1.28;
       color: var(--ink);
     }
@@ -651,32 +603,33 @@
       display: inline-block;
       text-decoration: none;
       border-radius: 999px;
-      padding: 12px 20px;
-      background: rgba(69, 36, 20, 0.9);
+      padding: 15px 24px;
+      background: rgba(69, 36, 20, 0.92);
       color: #f8e2bf;
       font-weight: 700;
+      font-size: 1.16rem;
       box-shadow: 0 10px 22px rgba(20, 8, 3, 0.25);
     }
 
     .music-btn {
       position: fixed;
-      right: 16px;
-      bottom: 16px;
+      right: 10px;
+      bottom: 10px;
       z-index: 20;
-      border: 1px solid rgba(255, 233, 199, 0.45);
+      border: 1px solid rgba(255, 233, 199, 0.52);
       background:
-        linear-gradient(135deg, rgba(88, 47, 27, 0.96), rgba(45, 24, 14, 0.96));
+        linear-gradient(135deg, rgba(88, 47, 27, 0.98), rgba(45, 24, 14, 0.98));
       color: #f8e2bf;
       backdrop-filter: blur(10px);
       border-radius: 999px;
-      padding: 15px 22px;
+      padding: 18px 25px;
       font-family: "Cormorant Garamond", serif;
-      font-size: 1.14rem;
-      font-weight: 700;
+      font-size: 1.32rem;
+      font-weight: 800;
       cursor: pointer;
       box-shadow:
-        0 14px 32px rgba(20, 8, 3, 0.42),
-        inset 0 0 12px rgba(255, 230, 190, 0.08);
+        0 16px 38px rgba(20, 8, 3, 0.5),
+        inset 0 0 14px rgba(255, 230, 190, 0.1);
       animation: musicPulse 2.2s ease-in-out infinite;
     }
 
@@ -684,60 +637,36 @@
       0%, 100% {
         transform: scale(1);
         box-shadow:
-          0 14px 32px rgba(20, 8, 3, 0.42),
+          0 16px 38px rgba(20, 8, 3, 0.5),
           0 0 0 rgba(248, 226, 191, 0);
       }
       50% {
-        transform: scale(1.04);
+        transform: scale(1.05);
         box-shadow:
-          0 16px 36px rgba(20, 8, 3, 0.48),
-          0 0 18px rgba(248, 226, 191, 0.26);
+          0 18px 42px rgba(20, 8, 3, 0.55),
+          0 0 20px rgba(248, 226, 191, 0.28);
       }
     }
 
-    @media (min-width: 760px) {
-      body {
-        padding: 18px 14px 100px;
-      }
-
+    @media (max-width: 390px) {
       .letter {
-        width: min(96vw, 920px);
-        min-height: calc(100vh - 36px);
-        padding: 60px 58px 64px;
-        margin-bottom: 22px;
-      }
-
-      .letter-date {
-        font-size: 1.05rem;
+        padding-left: 14px;
+        padding-right: 14px;
       }
 
       .letter-text p {
-        font-size: clamp(1.65rem, 2.45vw, 2.08rem);
-        line-height: 1.56;
-        margin-bottom: 42px;
+        font-size: 1.52rem;
+        line-height: 1.55;
       }
 
-      .section {
-        padding: 34px 24px 36px;
+      .music-btn {
+        padding: 17px 23px;
+        font-size: 1.25rem;
       }
 
-      .memory-inner {
-        grid-template-columns: minmax(280px, 350px) 1fr;
-        gap: 18px;
-      }
-
-      .memory-content {
-        text-align: left;
-        padding: 4px 6px;
-      }
-
-      .memory-image-wrap {
-        min-height: 220px;
-        padding: 8px;
-      }
-
-      .memory-image-wrap img {
-        max-height: 520px;
+      .intro-card {
+        min-height: 450px;
+        padding: 54px 24px;
       }
     }
   </style>
@@ -832,15 +761,8 @@
 
     <div class="scroll-cue fade-in delay-1">↓ Our story continues below ↓</div>
 
-    <div class="bridge-quote reveal">
-      Some memories are already ours.<br>
-      Some are waiting for us.<br>
-      All of them are part of forever.
-    </div>
-
     <section class="section fade-in delay-1">
       <h2 class="section-title">Our 3 month Memories and Future!</h2>
-
 
       <div class="memory-flow">
         <div class="memory-card reveal">
